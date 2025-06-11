@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    transition: background 1s ease;
+}
+
+body.focus-mode {
+    background: #ffffff;
+    color: #2c3e50;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 90%;
+    max-width: 500px;
+    transition: all 1s ease;
+}
+
+body.focus-mode .container {
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 97, 255, 0.1);
+    border: 2px solid rgba(0, 97, 255, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.music-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(147, 112, 219, 0.2);
+    border-color: rgba(147, 112, 219, 0.4);
+}
+
+.music-btn.playing {
+    background: rgba(147, 112, 219, 0.4);
+    border-color: rgba(147, 112, 219, 0.6);
+    box-shadow: 0 0 15px rgba(147, 112, 219, 0.3);
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.timer-circle {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 3rem;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 1s ease;
+}
+
+body.focus-mode .timer-circle {
+    background: #ffffff;
+    border: 2px solid rgba(0, 97, 255, 0.2);
+    box-shadow: 
+        0 4px 30px rgba(0, 97, 255, 0.1),
+        0 0 0 1px rgba(0, 97, 255, 0.1) inset;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 
+            0 4px 30px rgba(0, 97, 255, 0.1),
+            0 0 0 1px rgba(0, 97, 255, 0.1) inset;
+    }
+    50% {
+        box-shadow: 
+            0 4px 40px rgba(0, 97, 255, 0.15),
+            0 0 0 2px rgba(0, 97, 255, 0.2) inset;
+    }
+    100% {
+        box-shadow: 
+            0 4px 30px rgba(0, 97, 255, 0.1),
+            0 0 0 1px rgba(0, 97, 255, 0.1) inset;
+    }
+}
+
+.timer {
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -2px;
+}
+
+#mode-display {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+#start {
+    background: rgba(46, 213, 115, 0.2);
+    border-color: rgba(46, 213, 115, 0.4);
+}
+
+#pause {
+    background: rgba(255, 179, 0, 0.2);
+    border-color: rgba(255, 179, 0, 0.4);
+}
+
+#break {
+    background: rgba(52, 152, 219, 0.2);
+    border-color: rgba(52, 152, 219, 0.4);
+}
+
+#reset {
+    background: rgba(231, 76, 60, 0.2);
+    border-color: rgba(231, 76, 60, 0.4);
+}
+
+body.focus-mode .btn {
+    background: #2c3e50;
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.focus-mode .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.1);
+}
+
+body.focus-mode #start {
+    background: #27ae60;
+    color: #ffffff;
+}
+
+body.focus-mode #pause {
+    background: #f39c12;
+    color: #ffffff;
+}
+
+body.focus-mode #break {
+    background: #2980b9;
+    color: #ffffff;
+}
+
+body.focus-mode #reset {
+    background: #c0392b;
+    color: #ffffff;
+}
+
+body.focus-mode .music-btn {
+    background: #8e44ad;
+    color: #ffffff;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .timer-circle {
+        width: 220px;
+        height: 220px;
+        padding: 2rem;
+    }
+
+    .timer {
+        font-size: 3rem;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+} 

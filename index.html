@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Pomodoro Timer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pomodoro Timer</h1>
+            <button id="music" class="btn music-btn" title="Toggle Focus Music">
+                <span class="btn-text">🎵</span>
+            </button>
+        </div>
+        <div class="timer-container">
+            <div class="timer-circle">
+                <div class="timer">
+                    <span id="minutes">25</span>:<span id="seconds">00</span>
+                </div>
+                <div id="mode-display">Work Time</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start" class="btn">
+                <span class="btn-text">Start</span>
+            </button>
+            <button id="pause" class="btn">
+                <span class="btn-text">Pause</span>
+            </button>
+            <button id="break" class="btn">
+                <span class="btn-text">Break</span>
+            </button>
+            <button id="reset" class="btn">
+                <span class="btn-text">Reset</span>
+            </button>
+        </div>
+    </div>
+    <audio id="focusMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html> 
