@@ -9,6 +9,9 @@ const musicButton = document.getElementById('music');
 const focusMusic = document.getElementById('focusMusic');
 const modeDisplay = document.getElementById('mode-display');
 
+// Set initial theme for work mode
+setTheme(true);
+
 // Music control
 let isMusicPlaying = false;
 
