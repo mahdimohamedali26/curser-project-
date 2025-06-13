@@ -11,14 +11,19 @@
     <div class="container">
         <div class="header">
             <h1>Pomodoro Timer</h1>
-            <button id="music" class="btn music-btn" title="Toggle Focus Music">
-                <span class="btn-text">🎵</span>
-            </button>
+            <div class="music-controls">
+                <button id="music" class="btn music-btn" title="Toggle Focus Music">
+                    <span class="btn-text">🎵</span>
+                </button>
+                <div class="volume-container">
+                    <input type="range" id="volume" class="volume-slider" min="0" max="100" value="50">
+                </div>
+            </div>
         </div>
         <div class="timer-container">
             <div class="timer-circle">
                 <div class="timer">
-                    <span id="minutes">25</span>:<span id="seconds">00</span>
+                    <span id="minutes">50</span>:<span id="seconds">00</span>
                 </div>
                 <div id="mode-display">Work Time</div>
             </div>
@@ -34,12 +39,16 @@
                 <span class="btn-text">Break</span>
             </button>
             <button id="reset" class="btn">
-                <span class="btn-text">Reset</span>
+                <span class="btn-text">Work Mode</span>
             </button>
         </div>
     </div>
-    <audio id="focusMusic" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+    <audio id="focusMusic" loop preload="auto">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="breakMusic" loop preload="auto">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <script src="script.js"></script>
